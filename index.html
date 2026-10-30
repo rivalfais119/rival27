@@ -22,7 +22,7 @@ button,a{touch-action:manipulation}a{color:inherit}.cover{min-height:100svh;disp
   <p>27 Desember 2026</p>
   <div class="divider"></div>
   <p>Kepada Yth. Bapak/Ibu/Saudara/i</p>
-  <div class="guest" id="guestName">Tatang Sutaryadi</div>
+  <div class="guest" id="namaTamu"></div>
   <button class="btn" onclick="openInvitation()">Buka Undangan ✨</button>
   <p class="small" style="color:#e6e6dc;margin-top:16px">Mohon maaf apabila ada kesalahan penulisan nama/gelar.</p>
  </div>
@@ -161,6 +161,14 @@ function playNoteSequence(){if(!musicOn||!audioCtx)return;const notes=[261.63,32
 function toggleMusic(){if(musicOn){musicOn=false;if(audioCtx)audioCtx.suspend();document.getElementById("musicBtn").textContent="▶"}else{if(audioCtx)audioCtx.resume();musicOn=true;document.getElementById("musicBtn").textContent="♫";playNoteSequence()}}
 function sendRSVP(){const name=document.getElementById("rsvpName").value.trim()||"Tamu undangan";const status=document.getElementById("rsvpStatus").value;const msg=document.getElementById("rsvpMessage").value.trim()||"-";const text=`Assalamu'alaikum, saya ${name}. Konfirmasi: ${status}. Ucapan: ${msg}`;window.open("https://wa.me/"+CONFIG.whatsapp+"?text="+encodeURIComponent(text),"_blank")}
 async function copyAccount(){try{await navigator.clipboard.writeText(CONFIG.bankNumber);alert("Nomor rekening berhasil disalin")}catch(e){alert("Nomor rekening: "+CONFIG.bankNumber)}}
+</script>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const nama = params.get("to");
+
+  if (nama) {
+    document.getElementById("namaTamu").textContent = nama;
+  }
 </script>
 </body>
 </html>
