@@ -12,6 +12,31 @@ button,a{touch-action:manipulation}a{color:inherit}.cover{min-height:100svh;disp
 .cover:before,.cover:after{content:"✿";position:absolute;color:#d6c49b;opacity:.25;font-size:180px}.cover:before{top:-40px;left:-25px}.cover:after{bottom:-65px;right:-20px}
 .cover-inner{position:relative;z-index:1;max-width:520px;border:1px solid rgba(226,207,159,.65);padding:34px 24px;width:100%}.eyebrow{letter-spacing:3px;text-transform:uppercase;font:11px Arial,sans-serif}.cover h1{font-size:clamp(42px,12vw,68px);font-weight:normal;line-height:1.06;margin:20px 0 10px}.amp{color:#d8c18c;font-style:italic}.cover p{margin:8px 0}.guest{margin:24px auto 18px;padding:12px;background:rgba(255,255,255,.09);border-radius:4px}.btn{display:inline-block;border:0;border-radius:30px;padding:12px 22px;background:var(--gold);color:#fff;text-decoration:none;font:600 13px Arial,sans-serif;letter-spacing:.3px;cursor:pointer}.btn.secondary{background:var(--green)}main{display:none}main.show{display:block}.section{padding:64px 20px;text-align:center;max-width:760px;margin:auto}.section h2{font-weight:normal;font-size:clamp(30px,8vw,42px);line-height:1.2;margin:8px 0 18px;color:var(--green)}.section .label{font:11px Arial,sans-serif;letter-spacing:3px;text-transform:uppercase;color:var(--gold)}.intro{background:#fff}.names{font-size:clamp(36px,10vw,52px);line-height:1.2;color:var(--green);margin:24px 0}.ornament{color:var(--gold);font-size:24px}.photo-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:25px}.photo{min-height:210px;border-radius:6px;display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;background:linear-gradient(145deg,#d8d8c7,#a4b2a0);color:#354638;font:13px Arial,sans-serif;overflow:hidden}.photo img{width:100%;height:100%;object-fit:cover;position:absolute}.photo{position:relative}.photo span{position:relative;z-index:1;background:rgba(255,255,255,.72);padding:7px 10px;border-radius:4px}.story{background:#e9eee6}.event-card{background:#fff;border:1px solid #e4dcc8;border-radius:10px;padding:25px 18px;margin:16px 0}.event-card h3{color:var(--green);font-size:25px;font-weight:normal;margin:0}.event-date{font-size:22px;color:var(--gold);margin:8px}.countdown{display:flex;justify-content:center;gap:9px;margin:25px auto}.timebox{min-width:62px;padding:10px 8px;background:#fff;border:1px solid #e7dfcd;border-radius:7px}.timebox b{display:block;font-size:25px;color:var(--green);font-weight:normal}.timebox small{font:10px Arial,sans-serif;text-transform:uppercase;letter-spacing:1px}.storybox{max-width:520px;margin:auto;border-left:2px solid var(--gold);padding:5px 0 5px 20px;text-align:left}.gift{background:#fff}.bank{border:1px dashed var(--gold);padding:20px;border-radius:8px;margin:12px 0}.bank strong{display:block;font-size:21px;color:var(--green)}.form-note{font:12px Arial,sans-serif;color:#657064}.footer{background:var(--green);color:#fff;padding:45px 20px;text-align:center}.footer h2{font-size:35px;font-weight:normal;margin:8px}.floating{position:fixed;bottom:16px;right:16px;z-index:10;display:none;border-radius:50%;width:48px;height:48px;background:var(--green);color:white;border:1px solid #d6c49b;font-size:20px;box-shadow:0 3px 12px #0002}.floating.show{display:block}.small{font:12px Arial,sans-serif;color:#747c70}.divider{width:70px;height:1px;background:var(--gold);margin:24px auto}
 @media(min-width:650px){.photo{min-height:300px}.section{padding:80px 25px}.cover-inner{padding:45px}}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.photo {
+    position: relative;
+    width: 100%;
+    height: 260px;
+    min-height: 0;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 15px;
+    background: #d8d8c7;
+}
+
+.photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 </style>
 </head>
 <body>
@@ -36,45 +61,26 @@ button,a{touch-action:manipulation}a{color:inherit}.cover{min-height:100svh;disp
   <p>Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu.</p>
   <div class="photo-grid">
 
-<div class="photo">
-    <img
-        src="https://rivalfais119.github.io/rival27/foto_rival.jpg"
-        alt="Foto Rival"
-    >
+<div class="photo-grid">
+    <div class="photo">
+        <img
+            src="./foto_rival.jpg"
+            alt="Foto Rival"
+            onerror="this.onerror=null; this.src='/rival27/foto_rival.jpg';"
+        >
+    </div>
+
+    <div class="photo">
+        <img
+            src="./foto_najwa.jpg"
+            alt="Foto Najwa"
+            onerror="this.onerror=null; this.src='/rival27/foto_najwa.jpg';"
+        >
+    </div>
 </div>
 
-<div class="photo">
-    <img
-        src="https://rivalfais119.github.io/rival27/foto_najwa.jpg"
-        alt="Foto Najwa"
-    >
 </div>
 
-</div>
-
-<style>
-.photo-grid {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.photo {
-    width: 200px;
-    height: 260px;
-    overflow: hidden;
-    border-radius: 15px;
-}
-
-.photo img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-</style>
  </section>
  <section class="section story">
   <div class="label">Kisah Kami</div><h2>Perjalanan Menuju Ibadah</h2>
